@@ -38,10 +38,10 @@ export default function Sidebar({ open, onClose }) {
         width: 260, background: '#fff',
         borderRight: '1px solid #e5e7eb',
         display: 'flex', flexDirection: 'column',
-        zIndex: 100,
+        zIndex: 50,
         transform: open ? 'translateX(0)' : undefined,
         boxShadow: '2px 0 8px rgba(0,0,0,.04)',
-      }} className={`sidebar ${open ? 'open' : ''}`}>
+      }} className="sidebar">
 
         {/* Logo */}
         <div style={{
@@ -136,12 +136,9 @@ export default function Sidebar({ open, onClose }) {
             transform: translateX(-100%) !important;
             transition: transform .25s ease;
           }
-          .sidebar.open {
-            transform: translateX(0) !important;
-          }
           .sidebar-close { display: flex !important; }
         }
-        .sidebar.open {
+        .sidebar[style*="translateX(0)"] {
           transform: translateX(0) !important;
         }
       `}</style>
